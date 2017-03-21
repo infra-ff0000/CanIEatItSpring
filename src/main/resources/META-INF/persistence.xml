@@ -16,14 +16,4 @@
       <property name="javax.persistence.jdbc.password" value="winter12"/>
     </properties>
   </persistence-unit>
-  <persistence-unit name="com.aeteris.ciei_CanIEatIt_jar_0.0.1-SNAPSHOTPU2" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/CanIEatIt"/>
-      <property name="javax.persistence.jdbc.user" value="winter12"/>
-      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.password" value="winter12"/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-    </properties>
-  </persistence-unit>
 </persistence>
