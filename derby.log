@@ -1,8 +1,8 @@
 ----------------------------------------------------------------
-Mon Mar 20 17:11:02 PDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015a-ee33-e527-00000c19fae0 
+Mon Mar 20 23:16:32 PDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015a-ef82-83f4-00000a9e0d48 
 on database directory memory:/Users/ariazavocki/Downloads/CanIEatIt-3/testdb with class loader sun.misc.Launcher$AppClassLoader@659e0bfd 
-Loaded from file:/Users/ariazavocki/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+Loaded from file:/Users/ariazavocki/.m2/repository/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_66-b17
 user.dir=/Users/ariazavocki/Downloads/CanIEatIt-3
