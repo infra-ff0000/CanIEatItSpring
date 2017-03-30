@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="com.api.aeteris.controller" v="4.0" status="GENERATED" sm="false" xs="false" id="_14908580446181" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" abs="false" class="Allergen" v="true" m="false" rootElement="_14908580446181" id="_14908580447132">
+        <jpa:annotation e="true" n="@javax.xml.bind.annotation.XmlRootElement"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_14908580447274">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="NAME"/>
+            </jpa:basic>
+            <jpa:many-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_149085804545541" connected-attribute-id="_149085804545543" v="true" name="foodallergenCollection" ft="false" id="_14908580447305">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.Collection" connected-entity-id="_149085804490030" connected-attribute-id="_149085804490333" v="true" name="restrictionCollection" ft="false" id="_14908580447406">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-table name="ALLERGEN_RESTRICTION">
+                    <jpa:join-column name="ALLERGEN_ALLERGENSID" rc="ALLERGENSID"/>
+                    <jpa:inverse-join-column name="RESTRICTIONS_ID" rc="ID"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.Collection" connected-entity-id="_149085804545541" connected-attribute-id="_149085804545846" v="true" name="foodallergenCollection1" ft="false" id="_14908580447417">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-table name="ALLERGEN_FOODALLERGEN">
+                    <jpa:join-column name="ALLERGEN_ALLERGENSID" rc="ALLERGENSID"/>
+                    <jpa:inverse-join-column name="FOODALLERGENS_ID" rc="ID"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="allergensid" ft="false" id="_14908580447253">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="ALLERGENSID"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="Allergen.findAll">
+            <jpa:query>SELECT a FROM Allergen a</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Allergen.findByAllergensid">
+            <jpa:query>SELECT a FROM Allergen a WHERE a.allergensid = :allergensid</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Allergen.findByName">
+            <jpa:query>SELECT a FROM Allergen a WHERE a.name = :name</jpa:query>
+        </jpa:nq>
+        <jpa:table name="ALLERGEN"/>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Diet" v="true" m="false" rootElement="_14908580446181" id="_14908580447878">
+        <jpa:annotation e="true" n="@javax.xml.bind.annotation.XmlRootElement"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_149085804478710">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="NAME"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_149085804482314" connected-attribute-id="_149085804482316" v="true" name="dietfoodCollection" ft="false" id="_149085804479112">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_149085804493634" connected-attribute-id="_149085804493738" v="true" name="dietUserCollection" ft="false" id="_149085804479113">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.Collection" connected-entity-id="_149085804490030" connected-attribute-id="_149085804490032" v="true" name="restrictionCollection" ft="false" id="_149085804478711">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-table name="DIET_RESTRICTION">
+                    <jpa:join-column name="DIET_DIETID" rc="DIETID"/>
+                    <jpa:inverse-join-column name="RESTRICTIONS_ID" rc="ID"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="dietid" ft="false" id="_14908580447879">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="DIETID"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="Diet.findAll">
+            <jpa:query>SELECT d FROM Diet d</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Diet.findByDietid">
+            <jpa:query>SELECT d FROM Diet d WHERE d.dietid = :dietid</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Diet.findByName">
+            <jpa:query>SELECT d FROM Diet d WHERE d.name = :name</jpa:query>
+        </jpa:nq>
+        <jpa:table name="DIET"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="EMBEDDEDID" abs="false" class="Dietfood" v="true" m="false" rootElement="_14908580446181" id="_149085804482314">
+        <jpa:annotation e="true" n="@javax.xml.bind.annotation.XmlRootElement"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_14908580447878" connected-attribute-id="_149085804479112" v="true" name="diet" ft="false" id="_149085804482316">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-column name="DIET_DIETID" rc="DIETID" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_149085804486520" connected-attribute-id="_149085804487029" v="true" name="foodFoodid" ft="false" id="_149085804483017">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-column name="FOOD_FOODID" rc="FOODID"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="id" ft="false" id="_149085804483118">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="ID"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" v="true" name="dietDietid" ft="false" id="_149085804483119">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="DIET_DIETID"/>
+            </jpa:id>
+            <jpa:embedded-id v="true" name="dietfoodPK" ft="false" id="_149085804482315">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:embedded-id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="Dietfood.findAll">
+            <jpa:query>SELECT d FROM Dietfood d</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Dietfood.findById">
+            <jpa:query>SELECT d FROM Dietfood d WHERE d.dietfoodPK.id = :id</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Dietfood.findByDietDietid">
+            <jpa:query>SELECT d FROM Dietfood d WHERE d.dietfoodPK.dietDietid = :dietDietid</jpa:query>
+        </jpa:nq>
+        <jpa:table name="DIETFOOD"/>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Food" v="true" m="false" rootElement="_14908580446181" id="_149085804486520">
+        <jpa:annotation e="true" n="@javax.xml.bind.annotation.XmlRootElement"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="barcode" ft="false" id="_149085804486622">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="BARCODE"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="carbs" ft="false" id="_149085804486623">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="CARBS"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="fat" ft="false" id="_149085804486624">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="FAT"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_149085804486625">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="NAME"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="protein" ft="false" id="_149085804486626">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="PROTEIN"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_149085804482314" connected-attribute-id="_149085804483017" v="true" name="dietfoodCollection" ft="false" id="_149085804487029">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:many-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_149085804545541" connected-attribute-id="_149085804545844" v="true" name="foodallergenCollection" ft="false" id="_149085804486627">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_149085804545541" connected-attribute-id="_149085804545845" v="true" name="foodallergenCollection1" ft="false" id="_149085804486928">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="foodid" ft="false" id="_149085804486521">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="FOODID"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="Food.findAll">
+            <jpa:query>SELECT f FROM Food f</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Food.findByFoodid">
+            <jpa:query>SELECT f FROM Food f WHERE f.foodid = :foodid</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Food.findByBarcode">
+            <jpa:query>SELECT f FROM Food f WHERE f.barcode = :barcode</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Food.findByCarbs">
+            <jpa:query>SELECT f FROM Food f WHERE f.carbs = :carbs</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Food.findByFat">
+            <jpa:query>SELECT f FROM Food f WHERE f.fat = :fat</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Food.findByName">
+            <jpa:query>SELECT f FROM Food f WHERE f.name = :name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Food.findByProtein">
+            <jpa:query>SELECT f FROM Food f WHERE f.protein = :protein</jpa:query>
+        </jpa:nq>
+        <jpa:table name="FOOD"/>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Restriction" v="true" m="false" rootElement="_14908580446181" id="_149085804490030">
+        <jpa:annotation e="true" n="@javax.xml.bind.annotation.XmlRootElement"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:many-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_14908580447878" connected-attribute-id="_149085804478711" v="true" name="dietCollection" ft="false" id="_149085804490032">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_14908580447132" connected-attribute-id="_14908580447406" v="true" name="allergenCollection" ft="false" id="_149085804490333">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" ft="false" id="_149085804490031">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="ID"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="Restriction.findAll">
+            <jpa:query>SELECT r FROM Restriction r</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Restriction.findById">
+            <jpa:query>SELECT r FROM Restriction r WHERE r.id = :id</jpa:query>
+        </jpa:nq>
+        <jpa:table name="RESTRICTION"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="EMBEDDEDID" abs="false" class="DietUser" v="true" m="false" rootElement="_14908580446181" id="_149085804493634">
+        <jpa:annotation e="true" n="@javax.xml.bind.annotation.XmlRootElement"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="firstname" ft="false" id="_149085804493736">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="FIRSTNAME"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="lastname" ft="false" id="_149085804493737">
+                <jpa:bv>
+                    <jpa:si ma="255"/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="LASTNAME"/>
+            </jpa:basic>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_14908580447878" connected-attribute-id="_149085804479113" v="true" name="diet" ft="false" id="_149085804493738">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-column name="DIET_DIETID" rc="DIETID" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="usersId" ft="false" id="_149085804493739">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="USERS_ID"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" v="true" name="dietDietid" ft="false" id="_149085804493840">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="DIET_DIETID"/>
+            </jpa:id>
+            <jpa:embedded-id v="true" name="dietUserPK" ft="false" id="_149085804493735">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:embedded-id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="DietUser.findAll">
+            <jpa:query>SELECT d FROM DietUser d</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="DietUser.findByUsersId">
+            <jpa:query>SELECT d FROM DietUser d WHERE d.dietUserPK.usersId = :usersId</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="DietUser.findByDietDietid">
+            <jpa:query>SELECT d FROM DietUser d WHERE d.dietUserPK.dietDietid = :dietDietid</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="DietUser.findByFirstname">
+            <jpa:query>SELECT d FROM DietUser d WHERE d.firstname = :firstname</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="DietUser.findByLastname">
+            <jpa:query>SELECT d FROM DietUser d WHERE d.lastname = :lastname</jpa:query>
+        </jpa:nq>
+        <jpa:table name="DIET_USER"/>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Foodallergen" v="true" m="false" rootElement="_14908580446181" id="_149085804545541">
+        <jpa:annotation e="true" n="@javax.xml.bind.annotation.XmlRootElement"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:many-to-many own="true" collection-type="java.util.Collection" connected-entity-id="_14908580447132" connected-attribute-id="_14908580447305" v="true" name="allergenCollection" ft="false" id="_149085804545543">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-table name="FOODALLERGEN_ALLERGEN">
+                    <jpa:join-column name="FOODALLERGENCOLLECTION_ID" rc="ID"/>
+                    <jpa:inverse-join-column name="ALLERGENCOLLECTION_ALLERGENSID" rc="ALLERGENSID"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.Collection" connected-entity-id="_149085804486520" connected-attribute-id="_149085804486627" v="true" name="foodCollection" ft="false" id="_149085804545844">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-table name="FOODALLERGEN_FOOD">
+                    <jpa:join-column name="FOODALLERGENCOLLECTION_ID" rc="ID"/>
+                    <jpa:inverse-join-column name="FOODCOLLECTION_FOODID" rc="FOODID"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.Collection" connected-entity-id="_149085804486520" connected-attribute-id="_149085804486928" v="true" name="foodCollection1" ft="false" id="_149085804545845">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:join-table name="FOOD_FOODALLERGEN">
+                    <jpa:join-column name="FOODALLERGENS_ID" rc="ID"/>
+                    <jpa:inverse-join-column name="FOOD_FOODID" rc="FOODID"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="false" collection-type="java.util.Collection" connected-entity-id="_14908580447132" connected-attribute-id="_14908580447417" v="true" name="allergenCollection1" ft="false" id="_149085804545846">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" ft="false" id="_149085804545542">
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:column name="ID"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="true" name="Foodallergen.findAll">
+            <jpa:query>SELECT f FROM Foodallergen f</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="true" name="Foodallergen.findById">
+            <jpa:query>SELECT f FROM Foodallergen f WHERE f.id = :id</jpa:query>
+        </jpa:nq>
+        <jpa:table name="FOODALLERGEN"/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:diagram>
+        <plane elementRef="_14908580446181"/>
+    </jpa:diagram>
+</jpa:entity-mappings>
