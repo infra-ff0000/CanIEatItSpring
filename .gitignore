@@ -18,6 +18,10 @@ target/
 *.iml
 *.ipr
 
+### Third Party Tool ###
+.mvn
+.mvn*
+
 ### NetBeans ###
 nbproject/private/
 build/
