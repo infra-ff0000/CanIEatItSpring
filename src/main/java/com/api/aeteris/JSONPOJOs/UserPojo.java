@@ -12,21 +12,20 @@ import java.util.Arrays;
  *
  * @author ariazavocki
  */
-
-@javax.ws.rs.Path("user/info/{userId}")
+//map all callers in database
 public class UserPojo {
 
     private int userId ;
     
 
-	private String restrictions;
+	//private String restrictions;
 
 	// private String email;
-	private String[] allergens;
+	//private String[] allergens;
 
 	private String name;
 
-	private String age;
+	//private String age;
 
 	public int getuserId() {
 
@@ -39,7 +38,7 @@ public class UserPojo {
 
 	}
 
-	public String getRestrictions() {
+	/*public String getRestrictions() {
 		return restrictions;
 	}
 
@@ -52,14 +51,14 @@ public class UserPojo {
 	 * 
 	 * public void setEmail (String email) { this.email = email; }
 	 */
-	public String[] getAllergens() {
+	/*public String[] getAllergens() {
 		return allergens;
 	}
 
 	public void setAllergens(String[] allergens) {
 		this.allergens = allergens;
 	}
-
+*/
 	public String getName() {
 		return name;
 	}
@@ -68,21 +67,21 @@ public class UserPojo {
 		this.name = name;
 	}
 
-	public String getAge() {
+	/*public String getAge() {
 		return age;
 	}
 
 	public void setAge(String age) {
 		this.age = age;
 	}
-
-	@Override
+*/
+	/*@Override
 	public String toString() {
 		return "ClassPojo [restrictions = " + restrictions + ", allergens = " + Arrays.toString(allergens) + ", name = "
 				+ name + ", age = " + age + "]";
 	}
 }
-
+*/
 
 
                   

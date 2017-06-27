@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author ariazavocki
  */
-@Entity
+/*@Entity
 @Table(name = "DIET_USER")
 @XmlRootElement
 @NamedQueries({
@@ -30,6 +30,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "DietUser.findByDietDietid", query = "SELECT d FROM DietUser d WHERE d.dietUserPK.dietDietid = :dietDietid")
     , @NamedQuery(name = "DietUser.findByFirstname", query = "SELECT d FROM DietUser d WHERE d.firstname = :firstname")
     , @NamedQuery(name = "DietUser.findByLastname", query = "SELECT d FROM DietUser d WHERE d.lastname = :lastname")})
+*/
+
 public class DietUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
